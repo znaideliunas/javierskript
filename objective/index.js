@@ -33,12 +33,12 @@ console.log(brekfist());
 
   console.log("========================================");
 
-  function trikanunas() {
-        const cheesecake = ['banana', 'chocolate', 'strawberry', 'mascarpone'];
-        console.log(cheesecake.slice(1, 3));
+  function trikanunas(array1,startIndex, endIndex) {
+        // const cheesecake = ['banana', 'chocolate', 'strawberry', 'mascarpone'];
+        console.log(array1.slice(startIndex, endIndex));
   }
-  trikanunas();
-
+  trikanunas(['banana', 'chocolate', 'strawberry', 'mascarpone'], 0, 2);
+  trikanunas([11, 15, 33, 55, 100, 1122], 0, 4);
 //   nesuprantu, use paramaters
 
     console.log("========================================");
@@ -68,14 +68,30 @@ trikompacha();
 
     console.log("========================================");
 
-    function input() {
-        const letterWords = ['pineapple', 'kopustas', 'deutschland', 'hiiiiiiiiiiiiiiiiiiiiiiii'];
-        let higherThanTen = letterWords.find((word) => word > 10 )
-        console.log(higherThanTen);
-    } 
-    // somethings wrong ^ 
-    input();
+    function input(arrayTest) {
+        let higherThanTen = arrayTest.find((element) => 
 
+        {
+        if (typeof element === 'string'){
+           return element.length > 10
+        }
+        else if (typeof element === 'number'){
+            return element > 10
+        }
+        else if (typeof element === 'boolean') {
+            return element === true
+        }
+        else {
+        console.log("")
+        }
+        }
+    )
+    
+        console.log(higherThanTen);
+    }
+    input(['pineapple', 'kopustas', 'deutschland', 'hiiiiiiiiiiiiiiiiiiiiiiii'] );
+    input([1, 22, 33, 44, 55] );
+    input([true, false, true]);
         console.log("========================================");
 
     function mapinput() {
